@@ -24,6 +24,11 @@ module HealthDataStandards
             provider[:title]        = extract_data(name, "./cda:prefix")
             provider[:given_name]   = extract_data(name, "./cda:given[1]")
             provider[:family_name]  = extract_data(name, "./cda:family")
+            provider[:street]       = extract_data(name, "./cda:street")
+            provider[:city]         = extract_data(name, "./cda:city")
+            provider[:state]        = extract_data(name, "./cda:state")
+            provider[:provider_email] = extract_data(name, "./cda:provider_email")
+            provider[:org_email]      = extract_data(name, "./cda:org_email")
             provider[:phone]        = extract_data(entity, "./cda:telecom/@value") { |text| text.gsub("tel:", "") }
             provider[:organization] = extract_data(entity, "./cda:representedOrganization/cda:name")
             provider[:specialty]    = extract_data(entity, "./cda:code/@code")

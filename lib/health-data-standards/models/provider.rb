@@ -9,6 +9,11 @@ class Provider
   field :specialty   , type: String
   field :phone       , type: String
   field :organization, type: String
+  field :street      , type: String
+  field :city        , type: String
+  field :state       , type: String
+  field :provider_email, type: String
+  field :org_email   , type: String
   
   validates_uniqueness_of :npi, allow_blank: true
   
